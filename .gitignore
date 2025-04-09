@@ -1,21 +1,18 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg
-*.egg-info/
-dist/
-build/
-
-# Virtual environment
+# Exclude virtual environment
 gramformer-env/
 
-# Jupyter Notebooks
+# Exclude development files
+*.ipynb
+*.pyc
+__pycache__/
 .ipynb_checkpoints/
+
+# Exclude large directories
+.git/
+.idea/
+.vscode/
+node_modules/
 
 # System files
 .DS_Store
 Thumbs.db
-
-# VS Code
-.vscode/
-.vercel
