@@ -1,14 +1,13 @@
+# Create a proper build.sh file with Unix line endings
+@"
 #!/bin/bash
-set -e  # Exit immediately if any command fails
+set -e  # Exit on error
 
 # Install Python dependencies
-echo "Installing Python dependencies..."
 pip install --upgrade pip
-pip install -r requirements.txt --user
+pip install -r requirements.txt
 
-# Install Gramformer with explicit torch dependency
-echo "Installing Gramformer..."
-pip install torch==1.13.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+# Install Gramformer with CPU-only torch
+pip install torch==1.13.1+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
 pip install git+https://github.com/PrithivirajDamodaran/Gramformer.git
-
-echo "Build completed successfully"
+"@ | Out-File -Encoding ASCII build.sh
